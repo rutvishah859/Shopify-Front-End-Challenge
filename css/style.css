@@ -20,8 +20,8 @@ div input{
     border-radius: 3px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png");
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: contain;
+    background-position: 5px center;
+    background-size: 20px;
 }
 
 #results{
