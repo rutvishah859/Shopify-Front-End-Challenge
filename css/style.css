@@ -10,17 +10,17 @@ div {
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-div input{
+input{
     width: -webkit-fill-available;
     margin-top: 5px;
     height: 30px;
-    padding:17px;
-    padding-left:50px;
+    padding: 17px;
+    padding-left: 45px;
     border: lightgrey solid 2px;
     border-radius: 3px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png");
     background-repeat: no-repeat;
-    background-position: 5px center;
+    background-position: 10px center;
     background-size: 20px;
 }
 
@@ -34,4 +34,8 @@ div input{
     width: 45%;
     float: right; 
     margin-left: 5px;
+}
+
+li{
+    margin: 5px;
 }
