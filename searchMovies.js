@@ -23,6 +23,10 @@ function searchMovie(){
                 var nominateButton = document.createElement('button');
                 nominateButton.innerHTML = "Nominate";
                 nominateButton.value = data.Search[i].imdbID; 
+                
+                movieList.textContent = data.Search[i].Title + " (" + data.Search[i].Year + ") ";
+                movieList.appendChild(nominateButton);
+                results.appendChild(movieList);
 
                 //when the nominate button is clicked add that moive into the nominations
                 nominateButton.addEventListener('click', function(e){ 
@@ -40,11 +44,7 @@ function searchMovie(){
                     nominationList.textContent = data.Search[index].Title + " (" + data.Search[index].Year + ") ";
                     nominations.appendChild(nominationList); //append the movie into the nomination list
                     e.target.disabled = true; //disable the button when the moive has been selected to nominated
-                });
-
-                movieList.textContent = data.Search[i].Title + " (" + data.Search[i].Year + ") ";
-                movieList.appendChild(nominateButton);
-                results.appendChild(movieList);
+                });                
             }  
         }
       });
