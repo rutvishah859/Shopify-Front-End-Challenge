@@ -4,9 +4,34 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.box{
+div {
     background-color: white;
-    padding: 10px;
+    padding: 25px 20px;
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+div input{
+    width: -webkit-fill-available;
+    margin-top: 5px;
+    height: 30px;
+    padding:17px;
+    padding-left:50px;
+    border: lightgrey solid 2px;
+    border-radius: 3px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+}
+
+#results{
+    width: 45%;
+    float: left; 
+    margin-right: 5px;
+}
+
+#nominations{
+    width: 45%;
+    float: right; 
+    margin-left: 5px;
 }
