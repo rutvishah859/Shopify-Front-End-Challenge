@@ -5,6 +5,7 @@ function searchMovie(){
     var movie = document.getElementById("movieSearch").value; 
     var results = document.getElementById("results");
     var nominations = document.getElementById("nominations");
+
     results.innerHTML = ""; //each time the user makes a request reset the request box
 
     //request to get the info about the movie searched by the user from the API 
@@ -33,7 +34,12 @@ function searchMovie(){
                 results.appendChild(movieList);
 
                 //when the nominate button is clicked add that moive into the nominations
-                nominateButton.addEventListener('click', function(e){ 
+                nominateButton.addEventListener('click', function(e){
+                    if(numNominated < 1){
+                        var nomText = document.createElement('h3');
+                        nomText.innerHTML = "Nomination";
+                        nominations.appendChild(nomText);
+                    } 
                     //the the num of nominations exceed 5 then disbale all the nomination buttons
                     if (numNominated >= 5){
                         disableAll();
