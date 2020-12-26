@@ -14,10 +14,6 @@ function searchMovie(){
     searchResults.innerHTML = "Results for \"" + movie + "\"";
     results.appendChild(searchResults);
 
-    var nominationsText = document.createElement('h3');
-    nominationsText.innerHTML = "Nominations";
-    nominations.appendChild(nominationsText);
-
     fetch(request).then((response) => {
         return response.json();
       }).then(function(data){
