@@ -46,7 +46,7 @@ function searchMovie(){
                         disabled = true;
                     }
                     else{
-                        numNominated++;
+                        numNominated++; //when a nomination is added add 1 to numNominated
                         //create an unordered list
                         var nominationList = document.createElement('li');
                         var removeButton = document.createElement('button');
