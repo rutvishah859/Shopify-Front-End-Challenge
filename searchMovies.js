@@ -21,6 +21,7 @@ function searchMovie(){
         for (var i = 0; i < data.Search.length; i++){
             //only print the movies (exclude the search results that are TV shows and etc.)
             if (data.Search[i].Type == 'movie'){
+                checkNominated(); //each time the user makes a search check if any of the searched movies are in the nomination list, if so then disable the button
                 //create an unordered list element
                 var movieList = document.createElement('li'); 
                 //create a button which will nominate the moive 
@@ -103,15 +104,23 @@ function disableAll(){
 //when the buttons have been disabled, but the user removes a nomination from the nomination list re-enable the buttons
 function enableAll(){
     var nominations = document.getElementsByName("nominate");
-    var removeBtns = document.getElementsByName('remove');
 
     for(var i = 0; i < nominations.length; i++){
         nominations[i].disabled = false;
     }
+    checkNominated();
+}
+ 
+//check if the button has been nominated or not
+function checkNominated(){
+    var nominations = document.getElementsByName("nominate");
+    var removeBtns = document.getElementsByName('remove');
+
     for (var i = 0; i < removeBtns.length; i++){
         for (var a = 0; a < nominations.length; a++){
             if (nominations[a].value == removeBtns[i].value){
                 nominations[a].disabled = true;
+                console.log("disabled");
                 continue;
             }
         }
