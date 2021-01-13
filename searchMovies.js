@@ -1,5 +1,6 @@
 var numNominated = 0; //tracks the num of nominations made (when the nominations exceed 5 the user is no longer allowed to make anymore selections)
 var disabled = false; //boolean value that stoes wheather or not the nomination buttons have been disabled 
+var nomPrinted = false; //boolean used to check if  "Nominations" has already been printed  
 
 function searchMovie(){
     var movie = document.getElementById("movieSearch").value; 
@@ -14,6 +15,14 @@ function searchMovie(){
     var searchResults = document.createElement('h3');
     searchResults.innerHTML = "Results for \"" + movie + "\"";
     results.appendChild(searchResults);
+    
+    //only print nominations once
+    if(!nomPrinted){
+        var nomText = document.createElement('h3');
+        nomText.innerHTML = "Nomination";
+        nominations.appendChild(nomText);
+        nomPrinted = true;
+    }
 
     fetch(request).then((response) => {
         return response.json();
@@ -28,6 +37,7 @@ function searchMovie(){
                 var nominateButton = document.createElement('button');
                 nominateButton.innerHTML = "Nominate";
                 nominateButton.name = "nominate";
+                nominateButton.className = "nominate";
                 nominateButton.value = data.Search[i].imdbID; 
 
                 movieList.textContent = data.Search[i].Title + " (" + data.Search[i].Year + ") ";
@@ -35,12 +45,7 @@ function searchMovie(){
                 results.appendChild(movieList);
 
                 //when the nominate button is clicked add that moive into the nominations
-                nominateButton.addEventListener('click', function(e){
-                    if(numNominated < 1){
-                        var nomText = document.createElement('h3');
-                        nomText.innerHTML = "Nomination";
-                        nominations.appendChild(nomText);
-                    } 
+                nominateButton.addEventListener('click', function(e){ 
                     //the the num of nominations exceed 5 then disbale all the nomination buttons
                     if (numNominated >= 5){
                         disableAll();
@@ -51,8 +56,9 @@ function searchMovie(){
                         //create an unordered list
                         var nominationList = document.createElement('li');
                         var removeButton = document.createElement('button');
-                        removeButton.innerHTML = "Remove";
+                        removeButton.innerHTML = " Remove";
                         removeButton.name = "remove";
+                        removeButton.className = "remove";
                         removeButton.value = e.target.value;
 
                         var index; //hold the movie index (data.Search[index])
