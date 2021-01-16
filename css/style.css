@@ -5,7 +5,7 @@ body{
 }
 
 #content{
-    margin: 0 175px;
+    margin: 125px 175px;
 }
 
 #content div{
@@ -138,7 +138,7 @@ button{
     width: 100%;
     padding: 10px;
     background-color: #ccc;
-    height: 250px;
+    height: 100px;
 }
   
 .row:after {
@@ -191,4 +191,13 @@ button{
 .darkMode {
     background-color: #333;
     color: white;
+}
+
+#increment, #decrement {
+    border-radius: 50%;
+    border: none;
+}
+
+#increment:hover, #decrement:hover{
+    font-weight: bolder;
 }

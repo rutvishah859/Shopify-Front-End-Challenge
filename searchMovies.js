@@ -157,3 +157,85 @@ function changeMode(){
         }
     }
 }
+
+//the default font sizes in px
+var textFactor = 16; 
+var titleFactor = 32;
+//the max font size in px
+var textMax = 26;
+var titleMax = 42;
+//the min font size in px
+var textMin = 10;
+var titleMin = 22;
+
+//this function increments the font size on the page by 2px
+function incrementFontSize(){
+    //while the font size is still less than the max font sizes the font size on the page can stil be incremented
+    if (textFactor <= textMax && titleMax <= titleMax){
+        //if the user redudes the font size which makes it come back into the range then the increment button will ne enabled again
+        if (document.getElementById("decrement").disabled) {document.getElementById("decrement").disabled = false;}
+        
+        textFactor += 2;
+        titleFactor += 2;
+
+        document.getElementById("movieSearch").style.fontSize = textFactor + "px";
+        var nominateBtns = document.getElementsByClassName("nominate");
+        for (var i = 0; i < nominateBtns.length; i++){
+            nominateBtns[i].style.fontSize = textFactor + "px";
+        }
+        var removeBtns = document.getElementsByClassName("remove");
+        for (var i = 0; i < removeBtns.length; i++){
+            removeBtns[i].style.fontSize = textFactor + "px";
+        }
+
+        var contentNodes = document.getElementById("content").childNodes;
+        for (var i = 0; i < contentNodes.length; i++){
+            if (contentNodes[i].nodeName.toLocaleLowerCase() == 'div'){
+                contentNodes[i].style.fontSize = textFactor + "px";
+            }
+            else if (contentNodes[i].nodeName.toLocaleLowerCase() == 'h1'){
+                contentNodes[i].style.fontSize = titleFactor + "px";
+            }
+        } 
+    }
+    else { //when the max font size is hit disable the increment button 
+        document.getElementById("increment").disabled = true;
+    }
+    
+}
+
+//this function decrements the font size on the page by 2px 
+function decrementFontSize(){
+    //while the font size is still more than the min the font size can still be decremented
+    if (textFactor >= textMin && titleMax >= titleMin){
+        //when the font size comes back into range the increment button will be reenabled
+        if (document.getElementById("increment").disabled) {document.getElementById("increment").disabled = false;}
+        
+        textFactor -= 2;
+        titleFactor -= 2;
+
+        document.getElementById("movieSearch").style.fontSize = textFactor + "px";
+        var nominateBtns = document.getElementsByClassName("nominate");
+        for (var i = 0; i < nominateBtns.length; i++){
+            nominateBtns[i].style.fontSize = textFactor + "px";
+        }
+        var removeBtns = document.getElementsByClassName("remove");
+        for (var i = 0; i < removeBtns.length; i++){
+            removeBtns[i].style.fontSize = textFactor + "px";
+        }
+
+        var contentNodes = document.getElementById("content").childNodes;
+        for (var i = 0; i < contentNodes.length; i++){
+            if (contentNodes[i].nodeName.toLocaleLowerCase() == 'div'){
+                contentNodes[i].style.fontSize = textFactor + "px";
+            }
+            else if (contentNodes[i].nodeName.toLocaleLowerCase() == 'h1'){
+                contentNodes[i].style.fontSize = titleFactor + "px";
+            }
+        }
+    }
+    else{ //when the font size hits its min disable the decrement button
+        document.getElementById("decrement").disabled = true;
+    }
+    
+}
