@@ -126,8 +126,33 @@ function checkNominated(){
         for (var a = 0; a < nominations.length; a++){
             if (nominations[a].value == removeBtns[i].value){
                 nominations[a].disabled = true;
-                console.log("disabled");
                 continue;
+            }
+        }
+    }
+}
+
+//whenever the user changes the mode of the page (dark/light mode swtich) this function will instigate/halt the darkMode style qualities
+function changeMode(){
+    var mode = document.getElementById("switch").checked; //true = dark mode, false = light mode
+    document.body.classList.toggle("darkMode"); 
+    var contentNodes = document.getElementById("content").childNodes;
+
+    if (mode){
+        for (var i = 0; i < contentNodes.length; i++){
+            if (contentNodes[i].nodeName.toLocaleLowerCase() == 'div'){
+                contentNodes[i].style.color = "white";
+                contentNodes[i].style.backgroundColor = "#333";
+                document.getElementById("movieSearch").style.backgroundColor = "#DCDCDC";
+            }
+        }
+    }
+    else{
+        for (var i = 0; i < contentNodes.length; i++){
+            if (contentNodes[i].nodeName.toLocaleLowerCase() == 'div'){
+                contentNodes[i].style.color = "black";
+                contentNodes[i].style.backgroundColor = "white";
+                document.getElementById("movieSearch").style.backgroundColor = "white";
             }
         }
     }

@@ -6,18 +6,31 @@
         <script src="searchMovies.js"></script>
     </head>
     <body>
-        <h1>The Shoppies</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Page Settings</button>
+            <div class="dropdown-content">
+                <div class="row">
+                    <input type="checkbox" id="switch" class="checkbox" onchange="changeMode()"> 
+                    <label for="switch" class="toggle"></label> 
+                    <br>
+                    
+                </div>
+            </div>
+        </div> 
 
-        <div>
-            Movie Title
+        <div id ="content">
+            <h1>The Shoppies</h1>
+            <div>
+                Movie Title
+                <br>
+                <input type="search" id = "movieSearch" onchange="searchMovie()">
+            </div>
+            
             <br>
-            <input type="search" id = "movieSearch" onchange="searchMovie()">
+
+            <div id = "results"></div>
+
+            <div id = "nominations"></div>
         </div>
-        
-        <br>
-
-        <div id = "results"></div>
-
-        <div id = "nominations"></div>
     </body>
 </html>
