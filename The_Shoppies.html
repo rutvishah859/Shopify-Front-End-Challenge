@@ -10,12 +10,16 @@
             <button class="dropbtn">Page Settings</button>
             <div class="dropdown-content">
                 <div class="row">
-                    <input type="checkbox" id="switch" class="checkbox" onchange="changeMode()"> 
-                    <label for="switch" class="toggle"></label> 
-                    <br>
-                    <label>Font Size: </label> <br>
-                    <button id = "increment" onclick="incrementFontSize()">+</button>
-                    <button id = "decrement" onclick="decrementFontSize()">-</button>
+                    <div class = "column">
+                        <label><b>Dark Mode:</b></label> <br><br>
+                        <input type="checkbox" id="switch" class="checkbox" onchange="changeMode()"> 
+                        <label for="switch" class="toggle"></label> 
+                    </div>
+                    <div class = "column">
+                        <label><b>Font Size: </b></label> <br><br>
+                        <button id = "increment" onclick="incrementFontSize()">+</button>
+                        <button id = "decrement" onclick="decrementFontSize()">-</button>
+                    </div>
                 </div>
             </div>
         </div> 

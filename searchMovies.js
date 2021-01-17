@@ -139,6 +139,7 @@ function changeMode(){
     var contentNodes = document.getElementById("content").childNodes;
 
     if (mode){
+        document.getElementsByTagName('b')[0].innerHTML = "Light Mode:";
         for (var i = 0; i < contentNodes.length; i++){
             if (contentNodes[i].nodeName.toLocaleLowerCase() == 'div'){
                 contentNodes[i].style.color = "white";
@@ -148,6 +149,7 @@ function changeMode(){
         }
     }
     else{
+        document.getElementsByTagName('b')[0].innerHTML = "Dark Mode:";
         for (var i = 0; i < contentNodes.length; i++){
             if (contentNodes[i].nodeName.toLocaleLowerCase() == 'div'){
                 contentNodes[i].style.color = "black";
