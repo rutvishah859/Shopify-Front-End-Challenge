@@ -164,11 +164,11 @@ function changeMode(){
 var textFactor = 16; 
 var titleFactor = 32;
 //the max font size in px
-var textMax = 26;
-var titleMax = 42;
+var textMax = 24;
+var titleMax = 40;
 //the min font size in px
-var textMin = 10;
-var titleMin = 22;
+var textMin = 12;
+var titleMin = 24;
 
 //this function increments the font size on the page by 2px
 function incrementFontSize(){

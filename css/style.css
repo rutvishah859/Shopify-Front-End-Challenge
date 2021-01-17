@@ -5,7 +5,7 @@ body{
 }
 
 #content{
-    margin: 125px 175px;
+    margin: 75px 175px;
 }
 
 #content div{
@@ -66,11 +66,10 @@ button{
     top: 4px;
     right: -10px;
     transition: 0.5s;
-    padding-right: 3px;
 }
 
 .nominate:hover{
-    padding-right: 25px;
+    padding-right: 30px;
 }
 
 .nominate:hover::after{
@@ -91,11 +90,10 @@ button{
     top: 4px;
     right: -10px;
     transition: 0.5s;
-    padding-right: 3px;
 }
 
 .remove:hover{
-    padding-right: 25px;
+    padding-right: 30px;
 }
 
 .remove:hover::after{
